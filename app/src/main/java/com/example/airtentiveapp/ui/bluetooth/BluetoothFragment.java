@@ -85,7 +85,7 @@ public class BluetoothFragment extends Fragment implements BluetoothDeviceAdapte
                         }
 
                         if (!alreadyFound) {
-                           if (!alreadyFound && (deviceName.equals("Dust Sensor") || deviceName.equals("CANTFINDANAME") || deviceName.equals("LAPTOP-M8VIQSNJ"))) {
+                           if (!alreadyFound && (deviceName.equals("DustSensor") || deviceName.equals("CANTFINDANAME") || deviceName.equals("LAPTOP-M8VIQSNJ"))) {
                             devices.add(device);
                             Log.i(TAG, "Tìm thấy thiết bị: " + deviceName + " - " + deviceAddress);
                             // Notify adapter of data change to refresh RecyclerView
@@ -565,3 +565,4 @@ public class BluetoothFragment extends Fragment implements BluetoothDeviceAdapte
         }
     }
 }
+

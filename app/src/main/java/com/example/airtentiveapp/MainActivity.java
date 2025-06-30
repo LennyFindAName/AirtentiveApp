@@ -27,31 +27,11 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_bluetooth, R.id.navigation_notifications)
+                R.id.navigation_bluetooth, R.id.navigation_home, R.id.navigation_notifications)
                 .build();
-
-        try {
-            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-            try {
-                NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-            } catch (Exception e) {
-                // If setupActionBarWithNavController fails, the app can still function
-                e.printStackTrace();
-            }
-            NavigationUI.setupWithNavController(binding.navView, navController);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-       /* // Set up button click listener after navigation setup
-        try {
-            binding.buttonToBluetoothScreen.setOnClickListener(v -> {
-                Intent intent = new Intent(MainActivity.this, BluetoothActivity.class);
-                startActivity(intent);
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
 }

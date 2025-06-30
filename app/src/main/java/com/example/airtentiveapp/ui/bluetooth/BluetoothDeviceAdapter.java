@@ -252,7 +252,6 @@ public class BluetoothDeviceAdapter extends RecyclerView.Adapter<BluetoothDevice
             } else {
                 connectButton.setText("Connect");
                 connectButton.setOnClickListener(v -> listener.onConnectDevice(device));
-                dustSensorDataTextView.setText("Waiting for data...");
             }
 
             // Remove the click listener from the entire item
